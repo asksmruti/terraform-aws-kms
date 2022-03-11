@@ -44,7 +44,7 @@ data "aws_iam_policy_document" "kms_policy" {
   }
 
   dynamic "statement" {
-    for_each = length(var.power_user_list) > 0 ? [1] : []
+    for_each = length(var.user_list) > 0 ? [1] : []
     content {
       sid    = "Allow use of the key"
       effect = "Allow"
@@ -59,7 +59,7 @@ data "aws_iam_policy_document" "kms_policy" {
 
       principals {
         type        = "AWS"
-        identifiers = var.power_user_list
+        identifiers = var.user_list
       }
     }
   }
