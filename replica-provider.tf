@@ -1,5 +1,8 @@
+locals {
+  replica_region = var.replica_region != "" ? var.replica_region : "eu-west-1"
+}
+
 provider "aws" {
-  alias   = "replica"
-  region  = var.replica_region
-  profile = var.replica_aws_profile
+  alias  = "replica"
+  region = local.replica_region
 }

@@ -5,12 +5,6 @@ variable "replica_region" {
   description = "Specifies KMS replica key region"
 }
 
-variable "replica_aws_profile" {
-  type        = string
-  default     = "default"
-  description = "Provide aws profile for replica aws provider"
-}
-
 variable "deletion_window_in_days" {
   type        = number
   default     = 7
